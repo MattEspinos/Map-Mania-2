@@ -6,11 +6,48 @@
 	<script src="index.js"></script>
 	<title>Map Mania</title>
 </head>
-<body onload="initApplication()">
+<body onload="openModal()" >
 	<h1>Matt's Map Mania</h1>
+	<div class="info" > 
+		<h2 id="score">Score: 0</h2>
+		<h2 id="hint">Hint: </h2>
+		<button id="myBtn" autofocus onclick="initApplication()">Instructions</button>
+	</div>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <div class="modal-text">
+		<h2>Welcome to Matt's Map Mania!</h2>
+	  	<h3>Objective: Find all 10 locations throughout the map.</h3>
+		<h3>How to play: Zoom into specific places on the map to find my 10 favorite places. Once you find a location, a marker will be placed and you will get an alert saying 
+			you found the location and to seek the next one. The hint on the top of the screen will tell you if you can see the location on your screen currently.
+		</h3>
+		<h3>How to win: Once you find all 10 locations you win. (or you can press the cheat button on the bottom of the screen)</h3>
+	  </div>
+	</div>
+  </div>
 
 	<div id="myMapID"></div>
 
+	<div id="cheat">
+		<button type="button" onclick="openCheatModal()" id="cheatButton">Cheat Button</button><br><br>
+	</div>
+	<div id="cheatModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+		  <span class="close">&times;</span>
+		  <div class="modal-text">
+			<h2>WOULD YOU LIKE TO CHEAT?</h2>
+			<h3>Click outside the box to cancel</h3>
+			<button type="button" onclick="cheat()">YES take me to the end</button>
+			
+		  </div>
+		</div>
+	  </div>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo-Tx26B6v7TF7nKgqVKtjG5M0m6O48mQ&callback=initMap"></script>
 </body>
 </html>
