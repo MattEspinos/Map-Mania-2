@@ -378,3 +378,7 @@ function closeModals(modal){
     document.getElementById("score").innerHTML = "Score: " + score;
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel)
   }
+
+  function reset(){
+    window.location.replace('/index.html');
+  }
